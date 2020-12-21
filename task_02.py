@@ -1,16 +1,18 @@
 import openpyxl
 import pandas as pd
 
-result = openpyxl.Workbook()
+# вариант 3
+
+result = openpyxl.Workbook()  # чтение файлов
 items = pd.read_csv('items.csv', sep=';', encoding='utf8')
 persons = pd.read_csv('persons.csv', sep=';', encoding='utf8')
 
-result.create_sheet('Persons', 0)
+result.create_sheet('Persons', 0)  # создание листов
 result.create_sheet('Items', 1)
 del result['Sheet']
 
 
-def insert_names(name: str, my_list):
+def insert_names(name: str, my_list):  # заполнение страниц данными
     sheet = result[f'{name}']
     i = 1
     for row in my_list:
