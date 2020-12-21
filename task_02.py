@@ -39,4 +39,4 @@ insert_data('Items', items)
 insert_data('Persons', persons)
 
 result.save('persons_and_items.xlsx')
-
+result.close()
